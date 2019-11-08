@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function(){
     console.log(copyButtons)
 
     function copyButtonClick(e) {
+        window.getSelection().removeAllRanges();
+
         var button = e.target
         var element = document.getElementById(button.dataset.target)
         console.log(element)
@@ -22,9 +24,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 button.className = 'copied'
             }
         } catch (ignored) {
-            console.log('Failed to copy element')
-        } finally {
-            window.getSelection().removeAllRanges();
+            alert('Failed to copy element. Please use a more modern browser.')
         }
     }
 

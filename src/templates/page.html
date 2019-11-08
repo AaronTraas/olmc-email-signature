@@ -15,9 +15,16 @@
     <p>
         <a target="_blank" style="text-decoration: underline !important; color: #0000ff !important" href="https://docs.google.com/spreadsheets/d/1TNdrRXbBd68A0IXy2UlxOiYTpdtt1i01gDIVgqxoXwc/edit#gid=0">Edit the Google Sheet to update below.</a>
     </p>
-    {{body}}
+
+    <main>
+        {{body}}
+    </main>
 
     <style type="text/css">
+        main {
+            width: 420px;
+            margin: 0 auto;
+        }
         .signature-container {
             position: relative;
             padding: 22px;
@@ -26,9 +33,9 @@
             display: inline-block;
             position: absolute;
             top: 22px;
-            left: 400px;
+            right: 0;
             padding: 6px;
-            width: 88px;
+            width: 72px;
             height: 66px;
         }
         button.copied {
