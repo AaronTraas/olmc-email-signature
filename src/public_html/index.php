@@ -33,8 +33,9 @@ $result = $service->spreadsheets_values->get($spreadsheet_id, $range);
 $rows = $result->getValues();
 
 $body = '';
-foreach($rows as $row) {
+foreach($rows as $key => $row) {
 	$sig = str_replace($sig_search, $row, $sig_template);
+	$sig = str_replace('{{id}}', $key, $sig);
 	$body .= '<hr>' . $sig;
 }
 
