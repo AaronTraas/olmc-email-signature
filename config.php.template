@@ -1,0 +1,6 @@
+<?php
+
+define('GOOGLE_API_KEY', 'your API key here');
+define('GOOGLE_SHEET_ID', 'your sheet ID here');
+
+?>
