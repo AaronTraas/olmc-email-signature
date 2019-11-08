@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
     var copyButtons = document.querySelectorAll('button')
-    console.log(copyButtons)
 
     function copyButtonClick(e) {
         window.getSelection().removeAllRanges();

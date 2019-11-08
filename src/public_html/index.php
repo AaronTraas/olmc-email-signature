@@ -8,7 +8,7 @@ require_once '../lib/google-api-php-client-2.4.0/vendor/autoload.php';
 
 $spreadsheet_id = '1TNdrRXbBd68A0IXy2UlxOiYTpdtt1i01gDIVgqxoXwc';
 $range = 'Employees!A3:D';
-$sig_search = array('{{name}}', '{{grade}}', '{{title}}', '{{email}}');
+$sig_search = array('{{id}}', '{{name}}', '{{grade}}', '{{title}}', '{{email}}');
 $sig_template = file_get_contents('../templates/signature.html');
 $page_template = file_get_contents('../templates/page.html');
 
@@ -33,9 +33,11 @@ $result = $service->spreadsheets_values->get($spreadsheet_id, $range);
 $rows = $result->getValues();
 
 $body = '';
-foreach($rows as $key => $row) {
-	$sig = str_replace($sig_search, $row, $sig_template);
-	$sig = str_replace('{{id}}', $key, $sig);
+foreach($rows as $key => list($name, $grade, $title, $email)) {
+	if ($grade != '' && $title != '') {
+		$grade .= '<br>';
+	}
+	$sig = str_replace($sig_search, array($key, $name, $grade, $title, $email), $sig_template);
 	$body .= $sig;
 }
 
