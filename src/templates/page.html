@@ -10,23 +10,63 @@
     <script src="copy.js"></script>
 </head>
 <body>
-    <h1>OLMC email signatures</h1>
-    <p>
-        <a target="_blank" style="text-decoration: underline !important; color: #0000ff !important" href="https://docs.google.com/spreadsheets/d/1TNdrRXbBd68A0IXy2UlxOiYTpdtt1i01gDIVgqxoXwc/edit#gid=0">Edit the Google Sheet to update below.</a>
-    </p>
+    <header>
+        <div class="wrap">
+            <h1>OLMC email signatures</h1>
+            <ul>
+                <li>Edit the list of employees <a target="_blank" href="https://docs.google.com/spreadsheets/d/1TNdrRXbBd68A0IXy2UlxOiYTpdtt1i01gDIVgqxoXwc/edit#gid=0">on Google Sheets</a></li>
+                <li>If you want to use the code this page, <a target="_blank" href="https://github.com/AaronTraas/olmc-email-signature">fork it on Github</a></li>
+            </ul>
+        </div>
+    </header>
 
     <main>
-        {{body}}
+        <div class="wrap">
+            {{body}}
+        </div>
     </main>
 
+    <footer>
+        <div class="wrap">
+            <li><a target="_blank" href="https://docs.google.com/spreadsheets/d/1TNdrRXbBd68A0IXy2UlxOiYTpdtt1i01gDIVgqxoXwc/edit#gid=0">Google Sheet</a></li>
+            <li><a target="_blank" href="https://github.com/AaronTraas/olmc-email-signature">Github</a></li>
+        </div>
+    </footer>
+
+    <a class="github-fork-ribbon" target="_blank" href="https://github.com/AaronTraas/Clash-Royale-Clan-Tools" title="Fork me on GitHub">Fork me on GitHub</a>
+
     <style type="text/css">
+        html, body {
+            background-color: #000;
+            padding: 0;
+            margin: 0;
+        }
         main {
-            width: 420px;
+            background-color: #fff;
+            padding-bottom: 44px;
+        }
+        main .wrap {
+            max-width: 420px;
             margin: 0 auto;
         }
+        header {
+            background-color: #eee;
+        }
+        header .wrap, footer .wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 44px;
+            font-family: sans-serif;
+        }
+        header li > a[href] {
+            text-decoration: underline !important;
+            color: #0000ff !important
+        }
+
         .signature-container {
             position: relative;
-            padding: 22px;
+            padding: 22px 0;
+            border-bottom: 1px solid #999
         }
         button {
             display: inline-block;
@@ -36,9 +76,97 @@
             padding: 6px;
             width: 72px;
             height: 66px;
+            background-color: #ccc;
+            border-radius: 5px;
         }
         button.copied {
             background-color: #99ff99;
+        }
+
+        footer {
+            color: #fff;
+        }
+        footer ul, footer li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        footer li {
+            padding: 2px 12px;
+            border-right: 1px solid #fff;
+            display: inline-block;
+        }
+        footer li:last-child {
+            border: none;
+        }
+
+        .github-fork-ribbon {
+            font-family: sans-serif;
+            width: 160px;
+            height: 160px;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            right: 0;
+            font-size: 13px;
+            font-weight: bold;
+            text-decoration: none;
+            text-indent: -999999px;
+            pointer-events: none;
+        }
+
+        .github-fork-ribbon:before, .github-fork-ribbon:after {
+            position: absolute;
+            display: block;
+            width: 200px;
+            height: 20px;
+
+            top: 41px;
+            right: -41px;
+
+            transform: rotate(45deg);
+        }
+
+        .github-fork-ribbon:before {
+            content: "";
+
+            padding: 5px 0;
+            background-color: #a00;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.15));
+            box-shadow: 0 2px 3px 0 rgba(0,0,0,0.5);
+
+            pointer-events: auto;
+        }
+
+        .github-fork-ribbon:after {
+            content: "Fork me on GitHub";
+
+            line-height: 21px;
+            color: #fff;
+            text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            text-indent: 0;
+
+            padding: 2px 0;
+            margin: 2px 0;
+
+            border-width: 1px 0;
+            border-style: dotted;
+            border-color: rgba(255,255,255,0.7);
+        }
+
+        @media (max-width: 700px) {
+            .github-fork-ribbon {
+                width: 90px;
+                height: 90px;
+                font-size: 9px;
+            }
+            .github-fork-ribbon:before, .github-fork-ribbon:after {
+                width: 150px;
+                height: 18px;
+
+                top: 21px;
+            }
         }
     </style>
 </body>

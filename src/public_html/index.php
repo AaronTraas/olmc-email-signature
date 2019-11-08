@@ -36,7 +36,7 @@ $body = '';
 foreach($rows as $key => $row) {
 	$sig = str_replace($sig_search, $row, $sig_template);
 	$sig = str_replace('{{id}}', $key, $sig);
-	$body .= '<hr>' . $sig;
+	$body .= $sig;
 }
 
 $page = str_replace('{{body}}', $body, $page_template);
